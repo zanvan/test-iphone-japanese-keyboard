@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japanese Keyboard Test</title>
+</head>
+<body>
+    <header>
+        <h2>
+            Japanese Keyboard Test
+        </h2>
+    </header>
+    <main>
+        <form>
+            <div>
+                <label for="txt1">Test field:</label><br>
+                <input type="text" id="txt1">
+            </div>
+            <br>
+            <div>
+                <label for="txt2">Dummy field:</label><br>
+                <input type="text" id="txt2">
+            </div>
+        </form>
+    </main>
+    <br>
+    <hr>
+    <footer>
+        <p>
+            Observe console in web inspector.<br>
+            when typing into <b>Test field</b><br>
+        </p>
+    </footer>
+    <script>
+        function handleChange(ev) {
+            console.log('on-change', ev.target.value);
+        }
+        function handleFocus(ev) {
+            console.log('on-focus', ev.target.value);
+        }
+        function handleBlur(ev) {
+            console.log('on-blur', ev.target.value);
+        }
+
+        const input1 = document.getElementById('txt1');
+        input1.addEventListener('change', handleChange);
+        input1.addEventListener('focus', handleFocus);
+        input1.addEventListener('blur', handleBlur);
+    </script>
+</body>
+</html>
